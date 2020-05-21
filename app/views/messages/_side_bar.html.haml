@@ -2,12 +2,12 @@
   .sideBar__upper
     .sideBar__upper__user
       .sideBar__upper__user__name
-        masa
+        = current_user.name
       .sideBar__upper__user__menu
         = link_to '#' do
           = icon('fa', 'edit', class:'sideBar__upper__user__menu--icon')
           %span<>
-        = link_to '#' do
+        = link_to edit_user_path(current_user) do
           = icon('fa', 'cog', class:'sideBar__upper__user__menu--icon')
           %span<>
   .sideBar__lower

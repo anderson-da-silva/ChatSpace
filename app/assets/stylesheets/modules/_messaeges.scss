@@ -1,0 +1,177 @@
+$wC: #ffffff;
+
+* {
+  box-sizing: border-box;
+}
+
+a{
+ text-decoration: none;
+ color: #38aef0;
+}
+
+.wrapper{
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.sideBar{
+  height: 100vh;
+  width: 300px;
+  background-color: #253141;
+   &__upper{
+     height: 100px;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     &__user{
+       height: 20px;
+       width: 260px;
+       display: flex;
+       justify-content: space-between;
+       align-items: center;
+       &__name{
+         color: $wC;
+       }
+       &__menu{
+         width: 60px;
+         display: inline-block;
+         text-align: right;
+         &--icon{
+          color: $wC;
+          margin-left: 5px;         
+         }
+       }
+     }
+   }
+
+   &__lower{
+     height: calc(100vh - 100px);
+     width: 100%;
+     background-color: #2f3e51;
+     display: flex;
+     justify-content: center;
+     &__group{
+       width: 260px;
+       margin-top: 20px;
+       &__name{
+        font-size: 15px;
+        color: $wC;
+       }
+       &__newMessage{
+        font-size: 11px;
+        color: $wC;
+        margin: 5px 0 40px 0;
+       }
+     }
+   }
+}
+
+
+.main{
+  height: 100vh;
+  width: calc(100vw - 300px);
+  background-color: $wC;
+
+  &__group{
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    &__left{
+      margin: 35px 0 0 40px;
+      &__gName{
+        color: #333333;
+        font-size: 20px;
+        margin-bottom: 15px;
+      }
+      &__mName{
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+    &__right{
+      width: 72px;
+      height: 40px;
+      margin: 28px 40px 0 0;
+      border: #38aef0 solid 1px;
+      display: flex;
+      align-items: center;
+      &__btn{
+        color: #38aef0;
+        font-size: 16px;
+        font-weight: 500;
+        margin: 0 20px;
+      }
+    }
+
+  }
+
+  &__messages{
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    &__user{
+      margin: 0px 0 12px 40px ;
+      padding-top: 35px;
+      display: flex;
+      &__name{
+        color: #333333;
+        font-size: 16px;
+        font-weight: bolder;
+        margin-right: 10px;
+      }
+      &__date{
+        color: #999999;
+        font-size: 12px;
+      }
+    }
+    &__comment{
+      color: #434a54;
+      font-size: 14px;
+      margin: 0 0 46px 40px;
+    }
+  }
+
+  &__formArea{
+    height: 90px;
+    background-color: #d2d2d2;
+    &__form{
+      height: 90px;
+      display: flex;
+      align-items: center;
+      &__iBox{
+        height: 50px;
+        width: calc(100vw - 495px);
+        margin-left: 40px;
+        background-color: $wC;
+        display: flex;
+        position: relative;
+        &__field{
+          height: 100%;
+          width: 100%;
+          padding: 10px;
+        }
+        &__image{
+          display: flex;
+          position: absolute;
+          top: 14px;
+          right: 10px;
+          &--icon{
+            font-size: 22px;          }
+          &--hidden{
+            display: none;
+          }
+        }
+        
+      }
+      &__btn{
+        height: 50px;
+        width: 100px;
+        color: white;
+        font-size: 17px;
+        margin: 0 40px 0 15px;
+        background-color: #38aef0;
+      }
+    }
+  }
+}

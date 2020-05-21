@@ -1,0 +1,39 @@
+.main
+  .main__group
+    .main__group__left
+      .main__group__left__gName
+        group-test
+      .main__group__left__mName
+        member-test
+    .main__group__right
+      .main__group__right__btn
+        = link_to 'Edit', "#"
+
+  .main__messages
+    .main__messages__user
+      .main__messages__user__name
+        masa
+      .main__messages__user__date
+        44444455555555
+    .main__messages__comment
+      ohhaa!
+    .main__messages__user
+      .main__messages__user__name
+        masa2
+      .main__messages__user__date
+        44444458888888
+    .main__messages__comment
+      ohhaa!ee
+
+  .main__formArea
+    = form_with url: "#" do |f|
+      .main__formArea__form
+        .main__formArea__form__iBox
+          = f.text_field :content, class:"main__formArea__form__iBox__field", placeholder: 'type a message'
+          = f.label :image, class: 'main__formArea__form__iBox__image' do
+            =icon('fa','image',class:"main__formArea__form__iBox__image--icon")
+            =f.file_field :image, class: 'main__formArea__form__iBox__image--hidden'
+        %button{type: "submit", class:'main__formArea__form__btn'}
+          Send
+
+

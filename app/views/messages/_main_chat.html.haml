@@ -4,20 +4,23 @@
       .main__group__left__gName
         = @group.name
       .main__group__left__mName
+        Member:
         - @group.users.each do |user|
           = user.name
     .main__group__right
       .main__group__right__btn
         = link_to edit_group_path(@group) do
           = "Edit"
-  .main__messages
+
+  .main__message
     = render @messages
 
 
   .main__formArea
     = form_for [@group, @message] do |f|
-      = f.text_field :content, class: "main__formArea__form__iBox__field", placeholder: 'type a message'
-      = f.label :image, class: 'main__formArea__form__iBox__image' do
-        = icon('fa','image',class: "main__formArea__form__iBox__image--icon")
-        = f.file_field :image, class: 'main__formArea__form__iBox__image--hidden'
-      = f.submit 'Send', class: 'form__submit'
+      .main__formArea__iBox
+        = f.text_field :content, class: "main__formArea__iBox__field", placeholder: 'type a message'
+        = f.label :image, class: 'main__formArea__iBox__image' do
+          = icon('fa','image',class: "main__formArea__iBox__image--icon")
+          = f.file_field :image, class: 'main__formArea__iBox__image--hidden'
+      = f.submit 'Send', class: 'main__formArea__btn'

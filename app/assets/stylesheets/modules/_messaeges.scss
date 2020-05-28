@@ -31,10 +31,10 @@ a{
        display: flex;
        justify-content: space-between;
        align-items: center;
-       &__name{
+       &--name{
          color: $wC;
        }
-       &__menu{
+       &--menu{
          width: 60px;
          display: inline-block;
          text-align: right;

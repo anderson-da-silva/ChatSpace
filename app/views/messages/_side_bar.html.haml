@@ -4,7 +4,7 @@
       .sideBar__upper__user__name
         = current_user.name
       .sideBar__upper__user__menu
-        = link_to '#' do
+        = link_to new_group_path do
           = icon('fa', 'edit', class:'sideBar__upper__user__menu--icon')
           %span<>
         = link_to edit_user_path(current_user) do
@@ -12,19 +12,10 @@
           %span<>
   .sideBar__lower
     .sideBar__lower__group
-      .sideBar__lower__group__name
-        g1
-      .sideBar__lower__group__newMessage
-        m1
-      .sideBar__lower__group__name
-        g2
-      .sideBar__lower__group__newMessage
-        m2
-      .sideBar__lower__group__name
-        g3
-      .sideBar__lower__group__newMessage
-        m3
-      .sideBar__lower__group__name
-        g4
-      .sideBar__lower__group__newMessage
-        m4
+      - current_user.groups.each do |group|
+        .group
+          = link_to '#' do
+            .group__name
+              = group.name
+            .group__message
+              メッセージはまだありません。

@@ -47,19 +47,19 @@ a{
    }
 
    &__lower{
-     height: calc(100vh - 100px);
+     height: calc(100% - 100px);
      width: 100%;
      background-color: #2f3e51;
-     display: flex;
-     justify-content: center;
      &__group{
-       width: 260px;
-       margin-top: 20px;
-       &__name{
+       height: 91px;
+       width: 280px;
+       padding: 20px 0 40px 20px;
+       &--name{
         font-size: 15px;
+        margin-bottom: 5px;
         color: $wC;
        }
-       &__newMessage{
+       &--message{
         font-size: 11px;
         color: $wC;
         margin: 5px 0 40px 0;
@@ -97,6 +97,7 @@ a{
       border: #38aef0 solid 1px;
       display: flex;
       align-items: center;
+      cursor: pointer;
       &__btn{
         color: #38aef0;
         font-size: 16px;
@@ -104,74 +105,78 @@ a{
         margin: 0 20px;
       }
     }
-
   }
 
   &__messages{
     height: calc(100vh - 190px);
     background-color: #fafafa;
-    &__user{
-      margin: 0px 0 12px 40px ;
-      padding-top: 35px;
-      display: flex;
-      &__name{
-        color: #333333;
-        font-size: 16px;
-        font-weight: bolder;
-        margin-right: 10px;
+    &__message{
+      &__user{
+        margin: 0 0 12px 40px ;
+        padding-top: 35px;
+        display: flex;
+        &--name{
+          color: #333333;
+          font-size: 16px;
+          font-weight: bolder;
+          margin-right: 10px;
+        }
+        &--date{
+          color: #999999;
+          font-size: 12px;
+        }
       }
-      &__date{
-        color: #999999;
-        font-size: 12px;
+      &__comment{
+        color: #434a54;
+        font-size: 14px;
+        margin: 0 0 11px 40px;
       }
-    }
-    &__comment{
-      color: #434a54;
-      font-size: 14px;
-      margin: 0 0 46px 40px;
     }
   }
 
   &__formArea{
     height: 90px;
     background-color: #d2d2d2;
-    &__form{
-      height: 90px;
+    display: flex;
+    align-items: center;
+    &__iBox{
+      height: 50px;
+      width: calc(100vw - 495px);
+      margin: 0 15px 0 40px;
+      background-color: $wC;
       display: flex;
-      align-items: center;
-      &__iBox{
-        height: 50px;
-        width: calc(100vw - 495px);
-        margin-left: 40px;
-        background-color: $wC;
-        display: flex;
-        position: relative;
-        &__field{
-          height: 100%;
-          width: 100%;
-          padding: 10px;
-        }
-        &__image{
-          display: flex;
-          position: absolute;
-          top: 14px;
-          right: 10px;
-          &--icon{
-            font-size: 22px;          }
-          &--hidden{
-            display: none;
-          }
-        }
-        
+      position: relative;
+      &__field{
+        height: 100%;
+        width: 100%;
+        padding-left: 5px;
       }
-      &__btn{
-        height: 50px;
-        width: 100px;
-        color: white;
-        font-size: 17px;
-        margin: 0 40px 0 15px;
-        background-color: #38aef0;
+      &__image{
+        display: flex;
+        position: absolute;
+        top: 14px;
+        right: 10px;
+        &--icon{
+          font-size: 22px;
+          cursor: pointer;
+        }
+        &--hidden{
+          display: none;
+        }
       }
     }
+
+    &__btn{
+      height: 50px;
+      width: 100px;
+      color: white;
+      font-size: 17px;
+      margin-right: 40px;
+      background-color: #38aef0;
+    }
   }
+}
+
+form{
+  display: flex;
 }

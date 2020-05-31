@@ -1,30 +1,22 @@
 .sideBar
+
   .sideBar__upper
     .sideBar__upper__user
       .sideBar__upper__user__name
         = current_user.name
       .sideBar__upper__user__menu
-        = link_to '#' do
+        = link_to new_group_path do
           = icon('fa', 'edit', class:'sideBar__upper__user__menu--icon')
           %span<>
         = link_to edit_user_path(current_user) do
           = icon('fa', 'cog', class:'sideBar__upper__user__menu--icon')
           %span<>
+
   .sideBar__lower
-    .sideBar__lower__group
-      .sideBar__lower__group__name
-        g1
-      .sideBar__lower__group__newMessage
-        m1
-      .sideBar__lower__group__name
-        g2
-      .sideBar__lower__group__newMessage
-        m2
-      .sideBar__lower__group__name
-        g3
-      .sideBar__lower__group__newMessage
-        m3
-      .sideBar__lower__group__name
-        g4
-      .sideBar__lower__group__newMessage
-        m4
+    - current_user.groups.each do |group|
+      .sideBar__lower__group
+        = link_to group_messages_path(group.id) do
+          .sideBar__lower__group--name  
+            = group.name
+          .sideBar__lower__group--message
+            = group.show_last_message
